@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+
+    <!-- ! Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Resturant Web Site</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+    <!-- header section start -->
+    
+    <header class="header">
+        <a href="#" class="logo">
+            <img src="foto/logo.png" alt="logo">
+        </a>
+        <nav class="navbar">
+            <a href="home.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="menu.html">Menu</a>
+            <a href="products.html">Products</a>
+            <a href="review.html">Review</a>
+            <a href="contact.html">Contact</a>
+            <a href="blogs.html">Blogs</a>
+        </nav>
+
+
+        <div class="buttons">
+            <button id="search-btn">
+                <i class="fas fa-search"></i>
+            </button>
+            <button id="cart-btn">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="item-count" class="position-absolute top-0 sart-100 translate-middle badge rounded-pill bg-danger mr-2">0</span>
+            </button>
+            <button id="menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div class="search-form active">
+            <input type="text" class="search-input" id="search-box" placeholder="Search Hear">
+            <i class="fas fa-search"></i>
+        </div>
+        <div id="cartMenu" class="cart-items-container active">
+            
+            <a href="#" class="btn" >checkout now</a>
+        </div>
+    </header>
+    <!-- header section end -->
+
+
+    <!-- home section start -->
+    <section class="home" id="home">
+      <div class="content">
+        <h3>EXPRESS HOME DELİVERY</h3>
+        <P>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima laudantium quod, voluptatibus ex vero libero. Facere beatae porro nulla laborum?
+        </P>
+        <a href="#" class="btn">Order Now</a>
+      </div>
+    </section>
+    <button class="fa-x">X</button>
+    <!-- home section end -->
+
+    <!-- menu section start -->
+    <section class="menu" id="menu">
+        <h1 class="heading"> our <span>menu</span></h1>
+        <div class="box-container" id="cartContainer">
+            <div class="box" id="box1"  data-product-id="1" >
+                <div class="box-head" >
+                    <img src="foto/menu-1.png" alt="menu">
+                    <span class="menu-category">PİZZA</span>
+                    <h3>Mini <br> Pizzas</h3>
+                    <div class="price">$104.99 <span>119.99</span></div>
+                </div>
+                <div class="box-bottom">
+                    <a href="javascript:void(0)" data-image="foto/menu-1.png" onclick="goToChart(this, 'mini-pizzas')" data-name="Mini Pizza" data-category="Pizza" data-main-price="119.99" data-sale-price="104.99" class="btn add-chart">add to carts
+                    </a>
+                    <i id="" onclick="btnArtis(this)" class="fa-regular fa-plus"></i>
+                    <i id="" onclick="btnAzalis(this)" class="fa-solid fa-minus"></i>
+                    <input type="text" id="mini-pizzas" class="number-pieces" value="1">
+                </div>
+            </div>
+            <div class="box" id="box2">
+                <div class="box-head">
+                    <img src="foto/menu-2.png" alt="menu">
+                    <span class="menu-category">Burger</span>
+                    <h3>Mini Burgers</h3>
+                    <div class="price">$79.99  <span>109.99</span></div>
+                </div>
+                <div class="box-bottom">
+                    <a href="javascript:void(0)" data-image="foto/menu-2.png" onclick="goToChart(this, 'mini-burgers')"  data-name="Mini Burger" data-category="Burger" data-main-price="109.99" data-sale-price="79.99" class="btn add-chart">add to carts</a>
+                    <i id="" onclick="btnArtis(this)" class="fa-regular fa-plus"></i>
+                    <i id="" onclick="btnAzalis(this)" class="fa-solid fa-minus"></i>
+                    <input type="text" id="mini-burgers" value="1" class="number-pieces">
+                </div>
+            </div>
+            <div class="box" id="box3">
+                <div class="box-head">
+                    <img src="foto/menu-3.png" alt="menu">
+                    <span class="menu-category">PİZZA</span>
+                    <h3>Mixed Pizzas</h3>
+                    <div class="price">$89.99 <span>102.99</span></div>
+                </div>
+                <div class="box-bottom">
+                    <a href="javascript:void(0)" onclick="goToChart(this, 'mixed-pizzas', 1)" data-image="foto/menu-3.png" data-name="Mixed Burger" data-category="Pizza" data-main-price="102.99" data-sale-price="89.99" class="btn add-chart">add to carts
+                        <!-- <i class="fa-solid fa-trash"></i> -->
+                    </a>
+                    <i id="" onclick="btnArtis(this)" class="fa-regular fa-plus"></i>
+                    <i id="" onclick="btnAzalis(this)" class="fa-solid fa-minus"></i>
+                    <input type="text" class="number-pieces" id="mixed-pizzas" value="1">
+                </div>
+            </div>
+            
+            <div class="box" id="box4">
+                <div class="box-head">
+                    <img src="foto/menu-4.png" alt="menu">
+                    <span class="menu-category">Burger</span>
+                    <h3>Meatball Burgers</h3>
+                    <div class="price">$104.99  <span>119.99</span></div>
+                </div>
+                <div class="box-bottom">
+                    <a href="javascript:void(0)" data-image="foto/menu-4.png" onclick="goToChart(this, 'meatball-burgers')"  data-name="MeatballBurger" data-category="Burger" data-main-price="119.99" data-sale-price="104.99" class="btn add-chart">add to carts</a>
+                    <i id="" onclick="btnArtis(this)" class="fa-regular fa-plus"></i>
+                    <!-- <button id="" onclick="btnArtis(this)" class="fa-regular fa-plus"></button> -->
+                    <!-- <i id="" onclick="btnAzalis(this)" class="fa-solid fa-minus"></i> -->
+                    <button id="" onclick="btnAzalis(this)" class="fa-solid fa-minus"></button>
+ 
+                    <input type="text" id="meatball-burgers" value="1" class="number-pieces">
+                </div>
+            </div>
+
+
+            <!-- <div class="box" id="box4">
+                <div class="box-head">
+                    <img src="foto/menu-4.png" alt="menu">
+                    <span class="menu-category">Burger</span>
+                    <h3>Meatball Burgers</h3>
+                    <div class="price">$104.99 <span>119.99</span></div>
+                </div>
+                <div class="box-bottom">
+                    <a href="javascript:void(0)" onclick="goToChart(this, 'meatball-burger')"  data-image="foto/menu-4.png" data-name="Meatball Burgers" data-category="Burger" data-main-price="119.99" data-sale-price="104.99" class="btn add-chart">add to carts</a>
+                    <button id="" onclick="btnPlus(this.parentNode.parentNode)" class="button-plus">+</button>
+                    <input type="text" id="meatball-burger" value ="1"class="number-pieces">
+                </div>
+            </div> -->
+        </div>
+    </section>
+    <!-- menu section end -->
+
+    <!-- products section start -->
+    <section class="products" id="products">
+        <h1 class="heading">our <span>products</span> <span id="PrName" data-get-price=""></span></h1>
+        <div class="box-container">
+            <div class="box">
+                <div class="box-head">
+                    <span class="title">MINI BURGER</span>
+                    <a href="#" class="name">Bacon Burger</a>
+                </div>
+                <div class="image">
+                    <img src="foto/product-1.png" alt="">
+                </div>
+                <div class="box-bottom">
+                    <div class="info">
+                        <b class="price">$6.00</b>
+                        <span class="amount">110gr / 300cal</span>
+                    </div>
+                    <div class="products-btn">
+                        <a href="javascript:void(0)">
+                            <i class="fas fa-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+        </div>
+        <div class="box">
+            <div class="box-head">
+                <span class="title">MINI BURGER</span>
+                <a href="#" class="name">Bacon Burger</a>
+            </div>
+            <div class="image">
+                <img src="foto/product-2.png" alt="">
+            </div>
+            <div class="box-bottom">
+                <div class="info">
+                    <b class="price">$6.00</b>
+                    <span class="amount">110gr / 300cal</span>
+                </div>
+                <div class="products-btn">
+                    <a href="javascript:void(0)">
+                        <i class="fas fa-plus"></i>
+                    </a>
+                </div>
+            </div>
+            
+    </div>
+    <div class="box dark-bg">
+        <div class="box-head">
+            <span class="title">MINI BURGER</span>
+            <a href="#" class="name">Bacon Burger</a>
+        </div>
+        <div class="image">
+            <img src="foto/dark-product.jpg" alt="">
+        </div>
+        <div class="box-bottom">
+            <div class="info">
+                <b class="price">$6.00</b>
+                <span class="amount">110gr / 300cal</span>
+            </div>
+            <div class="products-btn">
+                <a href="javascript:void(0)">
+                    <i class="fas fa-plus"></i>
+                </a>
+            </div>
+        </div>
+        
+</div>
+    </section>
+    <!-- products section end -->
+
+    <!-- about section start -->
+<section class="about" id="about">
+    <h1 class="heading">about <span>us</span></h1>
+    <div class="row">
+        <div class="image">
+            <img src="foto/about.jpg" alt="about">
+        </div>
+        <div class="content">
+            <h3>What Is The Secret Recipe Of Our Burgers?</h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima ipsa numquam quisquam mollitia. Eum vitae ex illo eligendi tempore! Vero quidem doloribus magnam quas distinctio natus eum labore praesentium animi. Ullam, numquam?
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima ipsa numquam quisquam mollitia. Eum vitae ex illo eligendi tempore! Vero quidem doloribus magnam quas distinctio natus eum labore praesentium animi. Ullam, numquam?
+            </p>
+            
+            <a href="#" class="btn">Learn  More</a>
+        </div>
+    </div>
+</section>
+    <!-- about section end -->
+    
+    <!-- review section start -->
+    <section class="review" id="review">
+        <h1 class="heading">customer's<span>review</span></h1>
+        <div class="box-container">
+            <div class="box">
+                <img src="foto/quote.png" alt="quote">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad praesentium exercitationem labore atque dolor. Rerum delectus at natus? Et eos vero repellat saepe in!
+                </p>
+                <img src="foto/avatar-1.png" alt="avatar" class="user">
+                <h3>Jennefer Becker</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+            <div class="box">
+                <img src="foto/quote.png" alt="quote">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad praesentium exercitationem labore atque dolor. Rerum delectus at natus? Et eos vero repellat saepe in!
+                </p>
+                <img src="foto/avatar-2.png" alt="avatar" class="user">
+                <h3>John Doe</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+            <div class="box">
+                <img src="foto/quote.png" alt="quote">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad praesentium exercitationem labore atque dolor. Rerum delectus at natus? Et eos vero repellat saepe in!
+                </p>
+                <img src="foto/avatar-3.png" alt="avatar" class="user">
+                <h3>Lisa Aroumble</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- review section end -->
+
+    <!-- contanct section start -->
+    <section class="contact" id="contact">
+        <h1 class="heading">contact <span>us</span></h1>
+        <div class="row">
+            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12038.723829796667!2d29.031938!3d41.032235449999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab78eb4cc28d7%3A0xd6cc13bd2c633762!2zw5xza8O8ZGFyLCBLdXpndW5jdWssIDM0Njc0IMOcc2vDvGRhci_EsHN0YW5idWw!5e0!3m2!1str!2str!4v1670936200787!5m2!1str!2str"     loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <form>
+                <h3>get in touch</h3>
+                <div class="inputBox">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="name">
+                </div>
+                <div class="inputBox">
+                    <i class="fas fa-envelope"></i>
+                    <input type="text" placeholder="email">
+                </div>
+                <div class="inputBox">
+                    <i class="fas fa-phone"></i>
+                    <input type="text" placeholder="number">
+                </div>
+                <input type="submit" class="btn" value="contact now">
+            </form>
+        </div>
+    </section>
+    <!-- contanct section end -->
+    
+    <!-- blogs section start -->
+    <section class="blogs" id="blogs">
+        <h1 class="heading">our <span>blog</span></h1>
+        <div class="box-container">
+            <div class="box">
+                <div class="image">
+                    <img src="foto/blog-1.jpg" alt="blog">
+                </div>
+                <div class="content">
+                    <a href="#" class="title">how to make burgers?</a>
+                    <span>by admin / 10 may, 2020</span>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam facere dolorem neque distinctio nesciunt.
+                    </p>
+                    <a href="#" class="btn">read more</a>
+                </div>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="foto/blog-2.jpg" alt="blog">
+                </div>
+                <div class="content">
+                    <a href="#" class="title">how to make burgers?</a>
+                    <span>by admin / 10 may, 2020</span>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam facere dolorem neque distinctio nesciunt.
+                    </p>
+                    <a href="#" class="btn">read more</a>
+                </div>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="foto/blog-3.jpg" alt="blog">
+                </div>
+                <div class="content">
+                    <a href="#" class="title">how to make burgers?</a>
+                    <span>by admin / 10 may, 2020</span>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam facere dolorem neque distinctio nesciunt.
+                    </p>
+                    <a href="#" class="btn">read more</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- blogs section end -->
+
+    <!-- footer section start -->
+    <section class="footer">
+        <div class="search">
+            <input type="text" class="search-input" placeholder="Search">
+            <button class="btn btn-primary">search</button>
+        </div>
+        <div class="share">
+            <a href="#" class="fab fa-facebook"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+            <a href="#" class="fab fa-pinterest"></a>
+        </div>
+        <div class="links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Menu</a>
+            <a href="#">Products</a>
+            <a href="#">Review</a>
+            <a href="#">Contact</a>
+            <a href="#">Blogs</a>
+        </div>
+
+        <div class="credit">
+            created by <span>Semih Parlak</span>  all rigth reserved
+        </div>
+
+
+    </section>
+    <!-- footer section end -->
+
+<!-- 
+<script>
+    function goToChart(item) {
+        var productName = item.getAttribute("data-name");
+        var productCat = item.getAttribute("data-category");
+        var productMainPrice = item.getAttribute("data-main-price");
+        var productSalePrice = item.getAttribute("data-sale-price");
+        
+        var chartName = document.getElementById("PrName");
+        chartName.innerText = productName;
+        chartName.setAttribute("data-get-price", productSalePrice);
+    }
+</script>       -->
+
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
